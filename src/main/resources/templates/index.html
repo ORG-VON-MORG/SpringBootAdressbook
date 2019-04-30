@@ -24,13 +24,12 @@
                 <table class="table table-bordered table-striped mb-0">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Firstname</th>
                             <th>Lastname</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each ="person: $(listePersonen.listePersonen)">
+                        <tr th:each ="person: ${listePersonen}">
                             <td th:text="${person.firstname}"></td>
                             <td th:text="${person.lastname}"></td>
                         </tr>
@@ -41,7 +40,27 @@
     </div>
 
     <div class="col-8">
-        <p>My mother has <span style="color:blue">blue</span> eyes.</p>
+        <h1>Personen Details</h1>
+        <table>
+            <tr>
+                <td>First Name</td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+            </tr>
+            <tr>
+                <td>Steet</td>
+            </tr>
+            <tr>
+                <td>City</td>
+            </tr>
+            <tr>
+                <td>Postal Code</td>
+            </tr>
+            <tr>
+                <td>Birthday</td>
+            </tr>
+        </table>
     </div>
 
 </div>

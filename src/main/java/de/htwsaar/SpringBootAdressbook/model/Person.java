@@ -26,4 +26,14 @@ public class Person {
     private String postalCode;
     private Date birthday;
 
+
+    public Person(){
+
+    }
+
+    public Person(String firstname, String lastname){
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
 }

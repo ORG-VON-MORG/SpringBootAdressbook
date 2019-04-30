@@ -6,12 +6,15 @@
 
     <!--/* <div th:include="fragments/head :: globalscripts"></div> */-->
 
+
+
     <div class="test">
     <link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="webjars/jquery/3.3.1-1/jquery.min.js"></script>
     <script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </div>
 
+    <script type="text/javascript" th:src="@{js/main.js}"></script>
 
 
 </head>
@@ -21,7 +24,7 @@
     <div class="col-4">
 
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                <table class="table table-bordered table-striped mb-0">
+                <table class="table table-bordered table-striped mb-0" id="clickable">
                     <thead>
                         <tr>
                             <th>Firstname</th>
@@ -30,7 +33,7 @@
                     </thead>
                     <tbody>
                         <tr th:each ="person: ${listePersonen}">
-                            <td th:text="${person.firstname}"></td>
+                            <td th:text="${person.firstname}" id = "firstname1"></td>
                             <td th:text="${person.lastname}"></td>
                         </tr>
                     </tbody>
@@ -44,12 +47,15 @@
         <table>
             <tr>
                 <td>First Name</td>
+                <td id = "firstname"></td>
             </tr>
             <tr>
                 <td>Last Name</td>
+                <td id = "lastname"></td>
             </tr>
             <tr>
                 <td>Steet</td>
+                <td id="street"></td>
             </tr>
             <tr>
                 <td>City</td>

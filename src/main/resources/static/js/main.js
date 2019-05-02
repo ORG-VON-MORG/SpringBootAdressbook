@@ -3,7 +3,7 @@ $(document).ready(function () {
        alert($(this).text());
 
        var test ="test"
-       $("#firstname").val(test);
+        $("#firstname").html("Test")
 
     });
 

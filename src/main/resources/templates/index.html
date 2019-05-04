@@ -14,7 +14,8 @@
     <script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </div>
 
-    <script type="text/javascript" th:src="@{js/main.js}"></script>
+    <!-- <script  type="text/javascript" th:src="@{js/main.js}"></script> -->
+    <script type="text/javascript" th:src="@{js/test.js}"></script>
 
 
 </head>
@@ -27,12 +28,28 @@
                 <table class="table table-bordered table-striped mb-0" id="clickable">
                     <thead>
                         <tr>
-                            <th>Firstname</th>
+                            <th th:onclick="f()">Firstname</th>
                             <th>Lastname</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each ="person: ${listePersonen}">
+                        <tr th:each ="person: ${listePersonen}"
+                                th:data-firstname="${person.firstname}"
+                                th:data-lastname="${person.lastname}"
+                                th:data-city="${person.city}"
+                                th:data-postalCode="${person.postalCode}"
+                                th:data-birthday="${person.birthday}"
+
+
+
+                                th:onclick="f(
+                                    this.getAttribute('data-firstname'),
+                                    this.getAttribute('data-lastname'),
+                                    this.getAttribute('data-city'),
+                                    this.getAttribute('data-data-city'),
+                                    this.getAttribute('data-postalCode'),
+                                    this.getAttribute('data-birthday'),
+                                )" >
                             <td th:text="${person.firstname}" id = "firstname1"></td>
                             <td th:text="${person.lastname}"></td>
                         </tr>
@@ -54,17 +71,20 @@
                 <td id = "lastname"></td>
             </tr>
             <tr>
-                <td>Steet</td>
-                <td id="street"></td>
+                <td>Street</td>
+                <td id = "street"></td>
             </tr>
             <tr>
                 <td>City</td>
+                <td id = "city"></td>
             </tr>
             <tr>
                 <td>Postal Code</td>
+                <td id = "postalCode"></td>
             </tr>
             <tr>
                 <td>Birthday</td>
+                <td id = "birthday"></td>
             </tr>
         </table>
     </div>

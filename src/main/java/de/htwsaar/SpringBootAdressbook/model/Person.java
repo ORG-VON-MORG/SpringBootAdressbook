@@ -7,7 +7,9 @@ import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import java.util.Date;
+import java.util.Set;
 
 
 @Getter
@@ -25,7 +27,8 @@ public class Person {
     private String city;
     private String postalCode;
     private Date birthday;
-
+    @ManyToMany
+    private Set<Role> roles;
 
     public Person(){
 
@@ -35,5 +38,8 @@ public class Person {
         this.firstname = firstname;
         this.lastname = lastname;
     }
+
+
+
 
 }

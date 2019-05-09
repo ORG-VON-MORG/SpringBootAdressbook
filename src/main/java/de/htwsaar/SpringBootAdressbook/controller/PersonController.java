@@ -14,7 +14,7 @@ public class PersonController {
     private PersonRepository personRepository;
 
 
-    @GetMapping("/")
+    @GetMapping("/book")
     public String  showPage(Model model){
 
         personRepository.save(new Person("Tobias","Gottschalk"));
